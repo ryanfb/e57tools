@@ -11,6 +11,7 @@ Where [libE57Format](https://github.com/asmaloney/libE57Format) is a fork of E57
 * libE57Format
 * Xerces
 * Boost
+* CMake
 
 # Compiling
 
