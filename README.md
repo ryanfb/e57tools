@@ -1,0 +1,23 @@
+# E57Tools
+
+This repository contains tools for working with [E57 format](http://www.libe57.org/) 3D data, based on [libE57Format](https://github.com/asmaloney/libE57Format).
+
+Where [libE57Format](https://github.com/asmaloney/libE57Format) is a fork of E57RefImpl modified to strip out everything except the main implementation and compile on macOS, this is a fork of only the tools in the [libE57 source](https://sourceforge.net/p/e57-3d-imgfmt/code/HEAD/tree/trunk/src/) modified to compile on macOS and link against libE57Format:
+
+* `e57unpack`
+
+# Requirements
+
+* libE57Format
+* Xerces
+* Boost
+
+# Compiling
+
+On OS X with Xerces installed with `brew install xerces-c` and libE57Format already compiled/installed into the default path:
+
+    mkdir build && cd build
+    XERCES_ROOT="/usr/local/Cellar/xerces-c/3.2.1/" LIBE57FORMAT_INSTALL_DIR="/usr/local/E57Format-2.0-x86_64-darwin" cmake ..
+    make
+
+You can then optionally use `make install` to copy built binaries into e.g. `/usr/local/bin`. 
