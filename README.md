@@ -4,6 +4,7 @@ This repository contains tools for working with [E57 format](http://www.libe57.o
 
 Where [libE57Format](https://github.com/asmaloney/libE57Format) is a fork of E57RefImpl modified to strip out everything except the main implementation and compile on macOS, this is a fork of only the tools in the [libE57 source](https://sourceforge.net/p/e57-3d-imgfmt/code/HEAD/tree/trunk/src/) modified to compile on macOS and link against libE57Format:
 
+* `e57validate`
 * `e57unpack`
 
 # Requirements
