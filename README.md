@@ -7,6 +7,8 @@ Where [libE57Format](https://github.com/asmaloney/libE57Format) is a fork of E57
 * `e57validate`
 * `e57unpack`
 
+There's also a helper Ruby script, `e57applypose.rb`. This is for transforming split/unpacked CSV output from `e57unpack` to apply the E57 pose transformation, so that you can process each split scan individually in e.g. [CloudCompare](http://www.cloudcompare.org/) without losing the registration between scans.
+
 # Requirements
 
 * libE57Format
