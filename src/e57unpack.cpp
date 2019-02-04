@@ -9,7 +9,7 @@
 #define STRING_HELPER1(a) STRING_HELPER2(a)
 #define BUILD_VERSION STRING_HELPER1(SVN_VERSION)
 
-#include <E57Foundation.h>
+#include <E57Format.h>
 using e57::Node;
 using e57::ImageFile;
 using e57::StructureNode;
@@ -22,7 +22,6 @@ using e57::FloatNode;
 using e57::StringNode;
 using e57::BlobNode;
 using e57::E57Exception;
-using e57::E57Utilities;
 using e57::ustring;
 using e57::SourceDestBuffer;
 using e57::CompressedVectorReader;
@@ -111,7 +110,7 @@ print_version(
     int astmMajor;
     int astmMinor;
     ustring libraryId;
-    E57Utilities().getVersions(astmMajor, astmMinor, libraryId);
+    e57::Utilities::getVersions(astmMajor, astmMinor, libraryId);
 
     cout << "E57 API " << astmMajor << "." << astmMinor << endl;
     cout << libraryId << endl;

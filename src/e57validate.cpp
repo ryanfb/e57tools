@@ -77,7 +77,7 @@ using std::strlen;
 #include <cmath>
 using std::fabs;
 
-#include "E57Foundation.h"
+#include "E57Format.h"
 using namespace e57;
 using namespace std;
 

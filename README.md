@@ -21,7 +21,7 @@ There's also a helper Ruby script, `e57applypose.rb`. This is for transforming s
 On OS X with Xerces installed with `brew install xerces-c` and libE57Format already compiled/installed into the default path:
 
     mkdir build && cd build
-    XERCES_ROOT="/usr/local/Cellar/xerces-c/3.2.1/" LIBE57FORMAT_INSTALL_DIR="/usr/local/E57Format-2.0-x86_64-darwin" cmake ..
+    XERCES_ROOT="/usr/local/Cellar/xerces-c/3.2.2/" LIBE57FORMAT_INSTALL_DIR="/usr/local/E57Format-2.0-x86_64-darwin" cmake ..
     make
 
 You can then optionally use `make install` to copy built binaries into e.g. `/usr/local/bin`. 
