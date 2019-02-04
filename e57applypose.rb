@@ -63,6 +63,12 @@ CSV.open(ARGV[2], "w") do |csv_output|
     row_hash['cartesianX'] = rotated_point_array[0]
     row_hash['cartesianY'] = rotated_point_array[1]
     row_hash['cartesianZ'] = rotated_point_array[2]
+    if row_hash.has_key?('intensity')
+      intensity = row_hash['intensity'].to_f
+      row_hash['colorRed'] = (row_hash['colorRed'].to_i * intensity).to_i if row_hash['colorRed']
+      row_hash['colorGreen'] = (row_hash['colorGreen'].to_i * intensity).to_i if row_hash['colorGreen']
+      row_hash['colorBlue'] = (row_hash['colorBlue'].to_i * intensity).to_i if row_hash['colorBlue']
+    end
     if row_hash.has_key?('cartesianInvalidState') && (row_hash['cartesianInvalidState'].to_i != 0)
     else
       csv_output << row_hash.values
