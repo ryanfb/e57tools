@@ -30,7 +30,7 @@ begin
       output['diffuse_green'] = row_hash['colorGreen'].to_i if row_hash['colorGreen']
       output['diffuse_blue'] = row_hash['colorBlue'].to_i if row_hash['colorBlue']
       output_elements = []
-      ['x','y','z','intensity','diffuse_red','diffuse_green','diffuse_blue'].each do |element|
+      ['x','y','z','diffuse_red','diffuse_green','diffuse_blue'].each do |element|
         output_elements << output[element] if output.has_key?(element)
       end
       tempfile.puts output_elements.join(' ')
@@ -48,7 +48,7 @@ begin
     ['x','y','z'].each do |i|
       output.puts "property float #{i}"
     end
-    output.puts "property float intensity" if last_vertex.has_key?('intensity')
+    # output.puts "property float intensity" if last_vertex.has_key?('intensity')
     ['red','green','blue'].each do |color|
       output.puts "property uchar diffuse_#{color}" if last_vertex.has_key?("diffuse_#{color}")
     end
