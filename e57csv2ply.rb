@@ -24,13 +24,13 @@ begin
       output['x'] = row_hash['cartesianX']
       output['y'] = row_hash['cartesianY']
       output['z'] = row_hash['cartesianZ']
-      output['intensity'] = row_hash['intensity'].to_f if row_hash['intensity']
-      output['intensity'] = row_hash['Grey'].to_f if row_hash['Grey']
+      output['alpha'] = row_hash['intensity'].to_f if row_hash['intensity']
+      output['alpha'] = row_hash['Grey'].to_f if row_hash['Grey']
       output['diffuse_red'] = row_hash['colorRed'].to_i if row_hash['colorRed']
       output['diffuse_green'] = row_hash['colorGreen'].to_i if row_hash['colorGreen']
       output['diffuse_blue'] = row_hash['colorBlue'].to_i if row_hash['colorBlue']
       output_elements = []
-      ['x','y','z','diffuse_red','diffuse_green','diffuse_blue'].each do |element|
+      ['x','y','z','diffuse_red','diffuse_green','diffuse_blue','alpha'].each do |element|
         output_elements << output[element] if output.has_key?(element)
       end
       tempfile.puts output_elements.join(' ')
@@ -48,10 +48,10 @@ begin
     ['x','y','z'].each do |i|
       output.puts "property float #{i}"
     end
-    # output.puts "property float intensity" if last_vertex.has_key?('intensity')
     ['red','green','blue'].each do |color|
       output.puts "property uchar diffuse_#{color}" if last_vertex.has_key?("diffuse_#{color}")
     end
+    output.puts "property float alpha" if last_vertex.has_key?('alpha')
     output.puts 'end_header'
     File.foreach(tempfile.path) do |line|
       output.puts line
