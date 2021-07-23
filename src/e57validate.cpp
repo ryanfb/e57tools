@@ -2802,7 +2802,7 @@ bool validateFile(E57ValidatorOptions options, ustring fname)
             if (options.messagesAllowed[i] > 0)
                 messageCount += validator.messageCount(i);
         }
-        return(messageCount > 0);
+        return(messageCount == 0);
     } catch(E57Exception& ex) {
         ex.report(__FILE__, __LINE__, __FUNCTION__);
     } catch (std::exception& ex) {
