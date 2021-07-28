@@ -18,7 +18,11 @@ There's also a helper Ruby script, `e57applypose.rb`. This is for transforming s
 
 # Compiling
 
-On OS X with Xerces installed with `brew install xerces-c` and libE57Format already compiled/installed into the default path:
+There's now a [Homebrew](https://brew.sh) formula available which you should be able to install with:
+
+    brew install ryanfb/misc/e57tools
+
+Or, on OS X with Xerces installed with `brew install xerces-c` and libE57Format already compiled/installed into the default path:
 
     mkdir build && cd build
     XERCES_ROOT="/usr/local/Cellar/xerces-c/3.2.2/" LIBE57FORMAT_INSTALL_DIR="/usr/local/E57Format-2.0-x86_64-darwin" cmake ..
